@@ -19,9 +19,17 @@ class PhoneBook {
         // write your code here
         for (Map.Entry entry: nameToPhoneNumbersMap.entrySet()) {
             System.out.println(entry.getKey());
-            for (PhoneNumber number: (List<PhoneNumber>) entry.getValue()) {
-                System.out.println("  " + number.getNumber());
+            
+            // first way
+            Collection<PhoneNumber> numbers = (Collection<PhoneNumber>) entry.getValue();
+            for (PhoneNumber n: numbers) {
+                System.out.println("  " + n.getNumber());
             }
+
+            // second way
+            // for (PhoneNumber number: (List<PhoneNumber>) entry.getValue()) {
+            //     System.out.println("  " + number.getNumber());
+            // }
         }
     }
 }
